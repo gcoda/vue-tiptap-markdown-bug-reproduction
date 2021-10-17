@@ -1,6 +1,11 @@
 <template>
   <div class="min-vh-100 p-4">
     <div class="row h-100">
+      <button @click="setContent">
+        this.editor.commands.setContent
+        <!--  -->
+        (`## This should be markdown\n\n Aint no mark`)
+      </button>
       <div class="col-md-6">
         <textarea
           class="form-control h-100"
@@ -57,6 +62,11 @@ export default {
     },
     handleInput() {
       this.editor.commands.setContent(this.markdown)
+    },
+    setContent() {
+      this.editor.commands.setContent(
+        `## This should be markdown\n\n Aint no mark`
+      )
     },
   },
   mounted() {
